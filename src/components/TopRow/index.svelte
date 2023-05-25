@@ -28,6 +28,12 @@
     isToggled = !isToggled;
     toggleStore.update(value => isToggled);
   }
+  function handleKeydown(event) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    toggle();
+    event.preventDefault();  // prevent the default action to stop scrolling when space is pressed
+  }
+}
 </script>
 
   <div class="top-row">
@@ -36,7 +42,7 @@
     </div>
     <div class="framelines-toggle">
       <div class="label1">{@html frameIcon}</div>
-      <div class="toggle" on:click={toggle}>
+      <div class="toggle" on:click={toggle} on:keydown={handleKeydown} tabindex="0" role="button" aria-pressed="{isToggled ? 'true' : 'false'}">
         <div class="background" class:toggled={isToggled}></div>
         <div class="switch" class:toggled={isToggled}></div>
       </div>
@@ -117,6 +123,7 @@
     width: 149px;
     height: 69px;
     cursor:pointer;
+    border-radius: var(--br-42xl);
   }
 
   .toggle:hover .switch{

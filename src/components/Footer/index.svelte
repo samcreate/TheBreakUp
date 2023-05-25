@@ -23,10 +23,12 @@
 
     }
 
-    function test(params) {
-        console.log("here")
+    function handleKeydown(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            helpInfoToggle();
+            event.preventDefault();  // prevent the default action to stop scrolling when space is pressed
+        }
     }
-
 </script>
 
 <div class="bottom-row">
@@ -47,11 +49,10 @@
   {:else}
   <button class="help"  delay={ (showHelp ? 110 : 0) } showHelp={showHelp}>
     <div class="link">
-      <!-- <div class="aaronmcguiredesign" on:click={()=>{window.location.href = "https://www.aaronmcguire.design"}}>aaronmcguire.design</div> -->
       <a class="aaronmcguiredesign"  href="https://www.aaronmcguire.design" target="_blank">aaronmcguire.design</a>
     </div>
     <div class="labelbutton">
-        <div class="close-icon"  on:click={helpInfoToggle} >{@html closeSvg}</div>
+        <div class="close-icon" on:click={helpInfoToggle} on:keydown={handleKeydown} tabindex="0" role="button" aria-label="Close" >{@html closeSvg}</div>
     </div>
   </button>
   {/if}
