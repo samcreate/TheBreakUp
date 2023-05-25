@@ -1,73 +1,39 @@
-# Figsvelte
+# The Break Up - Figma Plugin
 
-A boilerplate for creating Figma plugins using Svelte.
+The Break Up" is a handy Figma plugin designed to streamline the creation of intricate staggered text animations. This plugin allows users to disassemble a block of text into separate lines. Furthermore, it provides an option to wrap each line in its own frame, enabling users to create dynamic masking effects for staggered animations.
 
-This starter project has everything you need to start developing a Figma plugin usign Svelte. Your JS, CSS, SVG and image assets can be bundled on build. The package will take care of compiling your typescript + app on save during development, and also minify on build.
+## Features
 
-Additionally, this package comes preconfigured with [Figma Plugin DS Svelte](https://github.com/thomas-lowry/figma-plugin-ds-svelte) where you have access to a large range of components and icons that match the Figma UI, to get you up and running quickly. Note: installing this boilerplate will install the component library as a dependency.
+1. Breaks a text block into individual lines.
+2. Frames each line, enabling clipping for advanced animation techniques.
+3. Hides the original text block, keeping your Figma workspace clean.
+4. Includes options for customizing the appearance and behavior of the generated frames and lines.
 
-Only what you import/use will be included in the final build for small bundle size.
+## Installation
 
-## To get started
+To install "The Break Up" plugin:
 
-```bash
-npx degit thomas-lowry/figsvelte figma-plugin
-cd figma-plugin
-npm install
-```
+1. Open the Figma desktop app.
+2. Go to the menu `Plugins` > `Manage Plugins`.
+3. In the new window, click on the `+` icon for adding plugins.
+4. Search for "The Break Up" in the search bar and click on the plugin.
+5. Click `Install`.
 
-_Note that you will need to have [Node.js](https://nodejs.org/) installed._
+## Usage
 
-## Connecting your plugin to Figma
+1. Select the text layer you want to break into individual lines.
+2. Run the plugin by going to `Plugins` > `The Break Up`.
+3. Configure your preferences in the plugin modal.
+4. Click `Break it up`.
 
-Connecting your plugin to Figma
-After installing, go to **Plugins / Development / New Plugin** in the Figma desktop app for Mac OS or Windows and choose the option **"Link existing plugin"**.
+## Contribution
 
-_You also can just type "New Plugin" in Figma global search to go there_
+This project is open source. Feel free to fork it and make your own changes.
 
-From there you need to link a **manifest.json** file located at **public** folder in your directory:
+## Support
 
-```bash
-/figma-plugin/public/manifest.json
-```
+If you encounter any problems or have suggestions, please open an issue on the GitHub project page.
 
-Now edit this file to give a new name for your plugin, and you will be able call it from Figma: **Plugins / Development / Your Plugin Name**
+## License
 
-## Development
-
-During development, watch your project for changes with the following command.
-
-```bash
-npm run dev
-```
-
-Start building your plugin UI in `'src/Plugin.svelte'`.
-
-## Build
-
-When ready to package up your final Figma Plugin:
-
-```bash
-npm run build
-```
-
-## Useful info
-
-To include an external CSS file:
-
-```javascript
-import styles from "./styles.css";
-```
-
-To include an SVG:
-
-```javascript
-import SvgName from './image.svg';
-
-//use in your markup
-{@html SvgName}
-```
-
-_For more info on using the Icon component system with SVGs from [Figma Plugin DS Svelte](https://github.com/thomas-lowry/figma-plugin-ds-svelte), refer to the repo._
-
-_For info about Figma API visit [Figma API Overview](https://www.figma.com/plugin-docs/api/api-overview/)_
+MIT License.
