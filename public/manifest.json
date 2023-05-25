@@ -1,0 +1,12 @@
+{
+  "name": "The Break Up   ♥",
+  "id": "1241522695015731092",
+  "api": "1.0.0",
+  "ui": "index.html",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ]
+}
